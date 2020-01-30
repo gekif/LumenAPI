@@ -10,7 +10,7 @@ class TeacherController extends Controller
     {
         $courses = Teacher::all();
 
-        return $this->createSuccessReponse($courses, 200);
+        return $this->createSuccessResponse($courses, 200);
 
     }
 
@@ -20,7 +20,7 @@ class TeacherController extends Controller
         $course = Teacher::find($id);
 
         if ($course) {
-            return $this->createSuccessReponse($course, 200);
+            return $this->createSuccessResponse($course, 200);
         }
 
         return $this->createErrorMessage("The teacher with id {$id}, does not exist", 400);
