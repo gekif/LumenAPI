@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="lumenapi@localhost">
-  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.9">
     <root id="1"/>
     <database id="2" parent="1" name="lumenapi">
       <ObjectId>38956</ObjectId>
@@ -159,21 +159,21 @@
     </table>
     <column id="46" parent="41" name="id">
       <Position>1</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16587</StateNumber>
-      <SequenceName>course_student_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;course_student_id_seq&apos;::regclass)</DefaultExpression>
+      <SequenceName>course_student_id_seq</SequenceName>
     </column>
     <column id="47" parent="41" name="course_id">
       <Position>2</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16587</StateNumber>
     </column>
     <column id="48" parent="41" name="student_id">
       <Position>3</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16587</StateNumber>
     </column>
@@ -208,45 +208,45 @@
     </foreign-key>
     <column id="53" parent="42" name="id">
       <Position>1</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16584</StateNumber>
-      <SequenceName>courses_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;courses_id_seq&apos;::regclass)</DefaultExpression>
+      <SequenceName>courses_id_seq</SequenceName>
     </column>
     <column id="54" parent="42" name="title">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16584</StateNumber>
     </column>
     <column id="55" parent="42" name="description">
       <Position>3</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16584</StateNumber>
     </column>
     <column id="56" parent="42" name="value">
       <Position>4</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16584</StateNumber>
     </column>
     <column id="57" parent="42" name="teacher_id">
       <Position>5</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16584</StateNumber>
     </column>
     <column id="58" parent="42" name="created_at">
       <Position>6</Position>
-      <DataType>timestamp(0)|0</DataType>
+      <DataType>timestamp(0)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16584</StateNumber>
     </column>
     <column id="59" parent="42" name="updated_at">
       <Position>7</Position>
-      <DataType>timestamp(0)|0</DataType>
+      <DataType>timestamp(0)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16584</StateNumber>
     </column>
@@ -272,57 +272,57 @@
     </foreign-key>
     <column id="63" parent="43" name="migration">
       <Position>1</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16579</StateNumber>
     </column>
     <column id="64" parent="43" name="batch">
       <Position>2</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16579</StateNumber>
     </column>
     <column id="65" parent="44" name="id">
       <Position>1</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16582</StateNumber>
-      <SequenceName>students_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;students_id_seq&apos;::regclass)</DefaultExpression>
+      <SequenceName>students_id_seq</SequenceName>
     </column>
     <column id="66" parent="44" name="name">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16582</StateNumber>
     </column>
     <column id="67" parent="44" name="address">
       <Position>3</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16582</StateNumber>
     </column>
     <column id="68" parent="44" name="phone">
       <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16582</StateNumber>
     </column>
     <column id="69" parent="44" name="career">
       <Position>5</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16582</StateNumber>
     </column>
     <column id="70" parent="44" name="created_at">
       <Position>6</Position>
-      <DataType>timestamp(0)|0</DataType>
+      <DataType>timestamp(0)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16582</StateNumber>
     </column>
     <column id="71" parent="44" name="updated_at">
       <Position>7</Position>
-      <DataType>timestamp(0)|0</DataType>
+      <DataType>timestamp(0)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16582</StateNumber>
     </column>
@@ -339,45 +339,45 @@
     </key>
     <column id="74" parent="45" name="id">
       <Position>1</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16580</StateNumber>
-      <SequenceName>teachers_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;teachers_id_seq&apos;::regclass)</DefaultExpression>
+      <SequenceName>teachers_id_seq</SequenceName>
     </column>
     <column id="75" parent="45" name="name">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16580</StateNumber>
     </column>
     <column id="76" parent="45" name="address">
       <Position>3</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16580</StateNumber>
     </column>
     <column id="77" parent="45" name="phone">
       <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16580</StateNumber>
     </column>
     <column id="78" parent="45" name="profession">
       <Position>5</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16580</StateNumber>
     </column>
     <column id="79" parent="45" name="created_at">
       <Position>6</Position>
-      <DataType>timestamp(0)|0</DataType>
+      <DataType>timestamp(0)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16580</StateNumber>
     </column>
     <column id="80" parent="45" name="updated_at">
       <Position>7</Position>
-      <DataType>timestamp(0)|0</DataType>
+      <DataType>timestamp(0)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>16580</StateNumber>
     </column>
