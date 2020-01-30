@@ -31,14 +31,7 @@ class TeacherController extends Controller
 
     public function store(Request $request)
     {
-        $rules = [
-            'name' => 'required',
-            'phone' => 'required|numeric',
-            'address' => 'required',
-            'profession' => 'required|in:engineering,math,physics'
-        ];
-
-        $this->validate($request, $rules);
+        $this->validateRules($request);
 
         $teacher = Teacher::create($request->all());
 
@@ -48,15 +41,48 @@ class TeacherController extends Controller
     }
 
 
-    public function update()
+    public function update(Request $request, $teacher_id)
     {
-        return __METHOD__;
+        $teacher = Teacher::find($teacher_id);
+
+        if ($teacher) {
+            $this->validateRequest($request);
+
+            $teacher->name = $request->get('name');
+            $teacher->phone = $request->get('phone');
+            $teacher->address = $request->get('address');
+            $teacher->profession = $request->get('profession');
+
+            $teacher->save();
+
+            return $this->createSuccessResponse(
+                "The teacher with id {$teacher->id} has been updated", 200);
+        }
+
+        return $this->createErrorResponse(
+            "The teacher with specified id does not exits", 404);
+
+
     }
 
 
     public function destroy()
     {
         return __METHOD__;
+    }
+
+
+    function validateRequest($request)
+    {
+        $rules = [
+            'name' => 'required',
+            'phone' => 'required|numeric',
+            'address' => 'required',
+            'profession' => 'required|in:engineering,math,physics'
+        ];
+
+        $this->validate($request, $rules);
+
     }
 
 

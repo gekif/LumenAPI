@@ -32,14 +32,7 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
-        $rules = [
-            'name' => 'required',
-            'phone' => 'required|numeric',
-            'address' => 'required',
-            'career' => 'required|in:engineering,math,physics'
-        ];
-
-        $this->validate($request, $rules);
+        $this->validateRequest($request);
 
         $student = Student::create($request->all());
 
@@ -49,15 +42,47 @@ class StudentController extends Controller
     }
 
 
-    public function update()
+    public function update(Request $request, $student_id)
     {
-        return __METHOD__;
+        $student = Student::find($student_id);
+
+        if ($student) {
+            $this->validateRequest($request);
+
+            $student->name = $request->get('name');
+            $student->phone = $request->get('phone');
+            $student->address = $request->get('address');
+            $student->career = $request->get('career');
+
+            $student->save();
+
+            return $this->createSuccessResponse(
+                "The student with id {$student->id} has been updated", 200);
+        }
+
+        return $this->createErrorResponse(
+            "The student with specified id does not exits", 404);
+
+
     }
 
 
     public function destroy()
     {
         return __METHOD__;
+    }
+
+
+    function validateRequest($request)
+    {
+        $rules = [
+            'name' => 'required',
+            'phone' => 'required|numeric',
+            'address' => 'required',
+            'career' => 'required|in:engineering,math,physics'
+        ];
+
+        $this->validate($request, $rules);
     }
 
 
