@@ -23,7 +23,7 @@ class CourseController extends Controller
             return $this->createSuccessResponse($course, 200);
         }
 
-        return $this->createErrorMessage("The course with id {$id}, does not exist", 400);
+        return $this->createErrorResponse("The course with id {$id}, does not exist", 400);
 
     }
 
