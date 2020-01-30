@@ -66,9 +66,24 @@ class TeacherController extends Controller
     }
 
 
-    public function destroy()
+    public function destroy($teacher_id)
     {
-        return __METHOD__;
+        $teacher = Teacher::find($teacher_id);
+
+        if ($teacher) {
+            $courses = $teacher->courses;
+
+            if (sizeof($courses)) {
+                return $this->createErrorResponse(
+                    "You cant remove a teacher with active courses. Please remove those courses", 409);
+            }
+
+            $teacher->delete();
+        }
+
+        return $this->createErrorResponse(
+            "The teacher with the specified id does not exist", 404);
+
     }
 
 
