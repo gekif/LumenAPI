@@ -2,11 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Teacher;
+
 class TeacherCourseController extends Controller
 {
-    public function index()
+    public function index($teacher_id)
     {
-        return __METHOD__;
+        $teacher = Teacher::findOrFail($teacher_id);
+
+        if ($teacher) {
+            $courses = $teacher->courses;
+
+            return $this->createSuccessResponse($courses, 200);
+        }
+
+        return $this->createErrorResponse(
+            'Does not exists a teacher with the given id', 404);
     }
 
 
