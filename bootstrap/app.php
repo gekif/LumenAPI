@@ -21,9 +21,9 @@ $app = new Laravel\Lumen\Application(
 
 //class_alias(\LucaDegasperi\OAuth2Server\Facades\Authorizer::class, 'Authorizer');
 
-class_alias('Illuminate\Support\Facades\Config', 'Config');
+//class_alias('Illuminate\Support\Facades\Config', 'Config');
 
- $app->withFacades();
+// $app->withFacades();
 
  $app->withEloquent();
 
