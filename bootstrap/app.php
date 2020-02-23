@@ -19,7 +19,11 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
-// $app->withFacades();
+//class_alias(\LucaDegasperi\OAuth2Server\Facades\Authorizer::class, 'Authorizer');
+
+class_alias('Illuminate\Support\Facades\Config', 'Config');
+
+ $app->withFacades();
 
  $app->withEloquent();
 
