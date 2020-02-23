@@ -6,13 +6,14 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/lumen-framework": "5.1.*",
-        "vlucas/phpdotenv": "~1.0",
-        "lucadegasperi/oauth2-server-laravel": "^5.0"
+        "laravel/lumen-framework": "5.2.*",
+        "vlucas/phpdotenv": "~2.2",
+        "lucadegasperi/oauth2-server-laravel": "^5.1"
     },
     "require-dev": {
+        "fzaninotto/faker": "~1.4",
         "phpunit/phpunit": "~4.0",
-        "fzaninotto/faker": "~1.0"
+        "mockery/mockery": "~0.9"
     },
     "autoload": {
         "psr-4": {
