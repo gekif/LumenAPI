@@ -12,7 +12,6 @@ class TeacherController extends Controller
         $courses = Teacher::all();
 
         return $this->createSuccessResponse($courses, 200);
-
     }
 
 
@@ -25,7 +24,6 @@ class TeacherController extends Controller
         }
 
         return $this->createErrorResponse("The teacher with id {$id}, does not exist", 400);
-
     }
 
 
@@ -37,7 +35,6 @@ class TeacherController extends Controller
 
         return $this->createSuccessResponse(
             "The teacher with id {$teacher->id} has been created", 200);
-
     }
 
 
@@ -61,8 +58,6 @@ class TeacherController extends Controller
 
         return $this->createErrorResponse(
             "The teacher with specified id does not exits", 404);
-
-
     }
 
 
@@ -83,7 +78,6 @@ class TeacherController extends Controller
 
         return $this->createErrorResponse(
             "The teacher with the specified id does not exist", 404);
-
     }
 
 
@@ -97,8 +91,6 @@ class TeacherController extends Controller
         ];
 
         $this->validate($request, $rules);
-
     }
-
 
 }

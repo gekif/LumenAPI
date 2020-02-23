@@ -11,7 +11,6 @@ class CourseController extends Controller
         $courses = Course::all();
 
         return $this->createSuccessResponse($courses, 200);
-
     }
 
 
@@ -24,8 +23,6 @@ class CourseController extends Controller
         }
 
         return $this->createErrorResponse("The course with id {$id}, does not exist", 400);
-
     }
-
 
 }

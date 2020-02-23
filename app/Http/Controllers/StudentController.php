@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Student;
-use App\Teacher;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -13,7 +12,6 @@ class StudentController extends Controller
         $courses = Student::all();
 
         return $this->createSuccessResponse($courses, 200);
-
     }
 
 
@@ -26,7 +24,6 @@ class StudentController extends Controller
         }
 
         return $this->createErrorResponse("The student with id {$id}, does not exist", 400);
-
     }
 
 
@@ -38,7 +35,6 @@ class StudentController extends Controller
 
         return $this->createSuccessResponse(
             "The student with id {$student->id} has been created", 200);
-
     }
 
 
@@ -62,8 +58,6 @@ class StudentController extends Controller
 
         return $this->createErrorResponse(
             "The student with specified id does not exits", 404);
-
-
     }
 
 
@@ -81,7 +75,6 @@ class StudentController extends Controller
 
         return $this->createErrorResponse(
             "The student with the specified id does not exist", 404);
-
     }
 
 
@@ -96,6 +89,5 @@ class StudentController extends Controller
 
         $this->validate($request, $rules);
     }
-
 
 }

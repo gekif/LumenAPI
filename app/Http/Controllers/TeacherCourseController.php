@@ -42,7 +42,7 @@ class TeacherCourseController extends Controller
                 , 201);
         }
 
-        return $this->createErrorResponse("The teacher with id {$teacher_id} does not exists", 404);
+        return $this->createErrorResponse("The teacher with id {$teacher_id} Doesn't exits", 404);
     }
 
 
@@ -52,9 +52,30 @@ class TeacherCourseController extends Controller
     }
 
 
-    public function update()
+    public function update(Request $request, $teacher_id, $course_id)
     {
-        return __METHOD__;
+        $teacher = Teacher::find($teacher_id);
+
+        if($teacher) {
+            $course = Course::find($course_id);
+
+            if($course) {
+                $this->validateRequest($request);
+
+                $course->title = $request->get('title');
+                $course->description = $request->get('description');
+                $course->value = $request->get('value');
+                $course->teacher_id = $teacher_id;
+
+                $course->save();
+
+                return $this->createSuccessResponse("The course with id {$course_id} was updated", 200);
+            }
+
+            return $this->createErrorResponse("Doesn't exits a course with the id {$course_id}", 404);
+        }
+        
+        return $this->createErrorResponse("Doesn't exits a teacher with the id {$teacher_id}", 404);
     }
 
 

@@ -55,4 +55,5 @@ class CourseStudentController extends Controller
     {
         return __METHOD__;
     }
+
 }
